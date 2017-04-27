@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Adry
  */
 public class PublicarEstado {
-    public void publicarEstado() throws FacebookException{
+    public static void publicarEstado() throws FacebookException{
         String mensaje=JOptionPane.showInputDialog("Escribe el estado");
         Autorizacion.autorizar().postStatusMessage(mensaje);
         
