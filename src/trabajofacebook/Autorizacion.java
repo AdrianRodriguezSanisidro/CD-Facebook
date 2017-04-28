@@ -7,6 +7,7 @@ package trabajofacebook;
 
 import facebook4j.Facebook;
 import facebook4j.FacebookFactory;
+import facebook4j.conf.ConfigurationBuilder;
 
 /**
  *
@@ -14,7 +15,15 @@ import facebook4j.FacebookFactory;
  */
 class Autorizacion {
     public static Facebook autorizar(){
-    Facebook facebook = new FacebookFactory().getInstance();
+    Facebook facebook;
+    ConfigurationBuilder conFace=new ConfigurationBuilder();
+    conFace.setDebugEnabled(true)
+            .setOAuthAppId("*****")//No lo pongo para que otros no puedan usar mi cuenta
+            .setOAuthAppSecret("****")//No la pongo para que otros no puedan usar mi cuenta
+            .setOAuthAccessToken("")//No lo pongo para que otros no puedan usar mi cuenta
+            .setOAuthPermissions("email,publish_stream,publish_actions");
+    FacebookFactory faceFact=new FacebookFactory(conFace.build());
+    facebook =faceFact.getInstance();
     return facebook;
 }
 }
