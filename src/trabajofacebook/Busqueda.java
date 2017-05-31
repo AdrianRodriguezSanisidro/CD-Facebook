@@ -11,10 +11,14 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Clase con el metodo busqueda
  * @author Adry
  */
 public class Busqueda {
+    /**
+     * Busca el nombre de los usuarios por un mensaje
+     * @throws FacebookException 
+     */
     public static void buscarUsuario() throws FacebookException{
         String mensaje=JOptionPane.showInputDialog("Mensaje a buscar: ");
         List<User>listaUsuario;

@@ -9,10 +9,14 @@ import facebook4j.FacebookException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Clase con el metodo PublicarEstado
  * @author Adry
  */
 public class PublicarEstado {
+    /**
+     * Publica un comentario en tu muro
+     * @throws FacebookException 
+     */
     public static void publicarEstado() throws FacebookException{
         String mensaje=JOptionPane.showInputDialog("Escribe el estado");
         Autorizacion.autorizar().postStatusMessage(mensaje);
